@@ -16,3 +16,14 @@ jobs:
       - name: Install pip
         run: |
           python -m pip install --upgrade pip
+      - name: Providers
+        - name: minikube
+        env:
+          - K8_PROVIDER=minikube
+          - K8_VERSION=v1.16.0
+          - CHANGE_MINIKUBE_NONE_USER=true
+          - CCO_INTERACTIVE_CI=interactive.yaml
+        run: |
+          pip install -e .
+          bash .travis.sh install-tools
+      
