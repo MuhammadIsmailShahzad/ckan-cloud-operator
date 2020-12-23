@@ -1,7 +1,7 @@
 name: Continuous Deployment
 on: [push]
 jobs:
-  Cluster Providers:
+  Cluster_Providers:
     runs-on: ubuntu-latest
     strategy:
       matrix:
