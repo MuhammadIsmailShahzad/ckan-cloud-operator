@@ -12,5 +12,5 @@ jobs:
         image: docker
     steps:
       - name: Installing pip
-          run: |
+        run: |
           python -m pip install --upgrade pip
