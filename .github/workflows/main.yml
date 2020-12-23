@@ -29,3 +29,5 @@ jobs:
           ls -all
           echo "HOME"
           ls $HOME
+          echo "CHECK"
+          ls /usr/local/bin
