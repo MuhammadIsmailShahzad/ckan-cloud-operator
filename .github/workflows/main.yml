@@ -29,4 +29,4 @@ jobs:
           sudo minikube start --memory=4976mb
           ls -all
           sudo mv ckan_cloud_operator $HOME
-          sudo chown -R $USER $HOME/ckan-cloud-operator
+          sudo chown -R $USER $HOME/ckan_cloud_operator
