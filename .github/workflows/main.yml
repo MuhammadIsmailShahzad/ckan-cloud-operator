@@ -28,9 +28,7 @@ jobs:
           minikube config set cpus 4 && minikube config set memory 8192 && minikube config set vm-driver none && minikube config set kubernetes-version "${K8_VERSION}"
           sudo minikube start --memory=4976mb
           ls -all
-          sudo mv ckan_cloud_operator $HOME
-          sudo chown -R $USER $HOME/ckan_cloud_operator
-          sudo ckan-cloud-operator cluster initialize --cluster-provider=minikube || travis_terminate 1;
+          sudo ckan_cloud_operator cluster initialize --cluster-provider=minikube || travis_terminate 1;
           sleep 60 && kubectl get ns && kubectl get pods -n ckan-cloud
           ckan-cloud-operator ckan instance create helm --instance-id a-ckan-instance --instance-name a-ckan-instance --update sample-values/values.datagov.yaml
           minikube delete
