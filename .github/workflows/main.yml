@@ -24,7 +24,6 @@ jobs:
           CCO_INTERACTIVE_CI: interactive.yaml
         run: |
           pip install -e .
-          docker run -it -v $PWD/.cco:/root/ viderum/ckan-cloud-operator:latest
           bash .travis.sh install-tools
           echo "Current Dir"
           ls -all
