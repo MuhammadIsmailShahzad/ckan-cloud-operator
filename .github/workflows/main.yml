@@ -27,10 +27,5 @@ jobs:
           bash .travis.sh install-tools
           minikube config set cpus 4 && minikube config set memory 8192 && minikube config set vm-driver none && minikube config set kubernetes-version "${K8_VERSION}"
           sudo minikube start --memory=4976mb
-          echo "Current Dir"
-          ls -all
-          echo "HOME"
-          ls $HOME
-          echo "CHECK"
-          ls /usr/local/bin
-          ckan-cloud-operator cluster initialize --cluster-provider=minikube || travis_terminate 1;
+          echo $user
+          ls /home/runner/.kube/
