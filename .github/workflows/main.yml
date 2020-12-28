@@ -27,6 +27,9 @@ jobs:
           bash .travis.sh install-tools
           minikube config set cpus 4 && minikube config set memory 8192 && minikube config set vm-driver none && minikube config set kubernetes-version "${K8_VERSION}"
           sudo minikube start --memory=4976mb
+          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/darwin/amd64/kubectl
+          chmod +x ./kubectl
+          sudo mv ./kubectl $HOME/kubectl
           sudo chown -R $USER $HOME/.kube $HOME/.minikube
           kubectl version
           echo helm version
