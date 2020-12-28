@@ -34,3 +34,5 @@ jobs:
           kubectl version
           echo helm version
           helm version
+          patch --local -oyaml -f - -p '{"metadata":{"labels":{"app":"helm","name":"tiller"}},"spec":{"selector": {"app":"helm","name":"tiller"}}}'
+          ckan-cloud-operator cluster initialize --cluster-provider=minikube || travis_terminate 1;
