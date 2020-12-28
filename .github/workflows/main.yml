@@ -28,4 +28,5 @@ jobs:
           minikube config set cpus 4 && minikube config set memory 8192 && minikube config set vm-driver none && minikube config set kubernetes-version "${K8_VERSION}"
           sudo minikube start --memory=4976mb
           sudo chown -R $USER $HOME/.kube $HOME/.minikube
+          helm init --service-account tiller --override spec.selector.matchLabels.'name'='tiller',spec.selector.matchLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply -f -
           ckan-cloud-operator cluster initialize --cluster-provider=minikube || travis_terminate 1;
