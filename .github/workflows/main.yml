@@ -33,4 +33,4 @@ jobs:
           ls $HOME
           echo "CHECK"
           ls /usr/local/bin
-          sudo ckan-cloud-operator cluster initialize --cluster-provider=minikube || travis_terminate 1;
+          ckan-cloud-operator cluster initialize --cluster-provider=minikube || travis_terminate 1;
