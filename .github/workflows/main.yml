@@ -29,6 +29,7 @@ jobs:
           sudo minikube start --memory=4976mb
           sudo chown -R $USER $HOME/.kube $HOME/.minikube
           ckan-cloud-operator cluster initialize --cluster-provider=minikube
+          helm version
           sleep 60 && kubectl get ns && kubectl get pods -n ckan-cloud
           ckan-cloud-operator ckan instance create helm --instance-id a-ckan-instance --instance-name a-ckan-instance --update sample-values/values.datagov.yaml
           minikube delete
