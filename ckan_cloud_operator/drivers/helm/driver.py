@@ -40,6 +40,7 @@ def init(tiller_namespace_name):
     kubectl.apply(cluster_role_binding)
     subprocess.check_call(
         f'helm init --output yaml > helm.yaml',
+        f'cat helm.yaml',
         shell=True
     )
 
