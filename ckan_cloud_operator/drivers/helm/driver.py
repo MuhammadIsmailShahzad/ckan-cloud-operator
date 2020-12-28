@@ -39,7 +39,7 @@ def init(tiller_namespace_name):
     kubectl.apply(tiller_service_account)
     kubectl.apply(cluster_role_binding)
     subprocess.check_call(
-        f'{}'.format("helm init --upgrade --service-account {tiller_namespace_name}-tiller --tiller-namespace {tiller_namespace_name} --history-max 10 --override spec.selector.matchLabels.'name'='tiller',spec.selector.matchLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply -f -"),
+        f"helm init --upgrade --service-account {tiller_namespace_name}-tiller --tiller-namespace {tiller_namespace_name} --history-max 10 --override spec.selector.matchLabels.'name'='tiller',spec.selector.matchLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply -f -",
         shell=True
     )
 
