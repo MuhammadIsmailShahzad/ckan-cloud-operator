@@ -19,8 +19,8 @@ jobs:
       - name: aws
         env:
           K8_PROVIDER: aws
-          AWS_ACCESS_KEY_ID: {{ secrets.AWS_ID }}
-          AWS_SECRET_ACCESS_KEY: {{ secrets.AWS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
         run: |
           echo running AWS
           pip install -e .
