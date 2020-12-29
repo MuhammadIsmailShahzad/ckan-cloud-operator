@@ -19,6 +19,8 @@ jobs:
       - name: aws
         env:
           K8_PROVIDER: aws
+          AWS_ACCESS_KEY_ID: {{ secrets.AWS_ID }}
+          AWS_SECRET_ACCESS_KEY: {{ secrets.AWS_KEY }}
         run: |
           pip install -e .
           bash .travis.sh install-tools
