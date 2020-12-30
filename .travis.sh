@@ -67,6 +67,7 @@ elif [ "${1}" == "install-tools" ]; then
 
     curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.15/bin/linux/amd64/kubectl
     chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+    kubectl version --client
     echo Kubectl Installed Successfully!
 
     curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh &&\
