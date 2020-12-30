@@ -26,6 +26,8 @@ jobs:
           pip install -e .
           bash .travis.sh install-tools
           cd terraform/aws
+          echo Version Check
+          kubectl version
           ./init_cluster.sh ${AWS_ACCESS_KEY_ID} ${AWS_SECRET_ACCESS_KEY} eu-west-2 vpc-30aedd58 terraform-cco ckan-aws-testing.gq
   Minikube:
     runs-on: ubuntu-latest
