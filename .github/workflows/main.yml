@@ -27,8 +27,6 @@ jobs:
           bash .travis.sh install-tools
           cd terraform/aws
           echo Version Check
-          curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.12/bin/linux/amd64/kubectl
-          chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
           ./init_cluster.sh ${AWS_ACCESS_KEY_ID} ${AWS_SECRET_ACCESS_KEY} eu-west-2 vpc-30aedd58 terraform-cco ckan-aws-testing.gq
   Minikube:
     runs-on: ubuntu-latest

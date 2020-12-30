@@ -67,7 +67,7 @@ elif [ "${1}" == "install-tools" ]; then
 
 
 
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.3/bin/linux/amd64/kubectl
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/v20.1.0/bin/linux/amd64/kubectl
     chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
     kubectl version --client
     echo Kubectl Installed Successfully!
