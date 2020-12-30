@@ -2,7 +2,7 @@
 
 TAG="${TRAVIS_TAG:-${TRAVIS_COMMIT}}"
 AWS_IAM_AUTHENTICATOR_VERSION="1.14.6/2019-08-22"
-TERRAFORM_VERSION=0.13.0
+TERRAFORM_VERSION=0.12.9
 PACKER_VERSION=1.6.6
 HELM_VERSION=v2.16.1
 
@@ -65,7 +65,7 @@ elif [ "${1}" == "install-tools" ]; then
       echo Azure CLI Installed Successfully!
    fi
 
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.12/bin/linux/amd64/kubectl
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.20.0/bin/linux/amd64/kubectl
     chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
     kubectl version --client
     echo Kubectl Installed Successfully!
