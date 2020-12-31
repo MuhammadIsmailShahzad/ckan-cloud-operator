@@ -46,10 +46,10 @@ resource "random_password" "cluster_name_suffix" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "5.0.0"
+  version = "7.0.1"
 
   cluster_name    = "${var.cluster_name}-${random_password.cluster_name_suffix.result}"
-  cluster_version = "1.13"
+  cluster_version = "1.16.15"
 
   subnets = data.aws_subnet_ids.selected.ids
   vpc_id = var.vpc_id
