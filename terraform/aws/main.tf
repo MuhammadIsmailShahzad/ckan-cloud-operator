@@ -49,7 +49,7 @@ module "eks" {
   version = "7.0.1"
 
   cluster_name    = "${var.cluster_name}-${random_password.cluster_name_suffix.result}"
-  cluster_version = "1.16.15"
+  cluster_version = "1.14"
 
   subnets = data.aws_subnet_ids.selected.ids
   vpc_id = var.vpc_id
@@ -70,7 +70,7 @@ resource "aws_security_group_rule" "allow_inner_cluster" {
 # K8S NODE GROUP
 resource "aws_iam_role" "cco-nodegroup" {
   name = "eks-node-group-${random_password.cluster_name_suffix.result}"
-
+  version = "1.16.15"
   assume_role_policy = jsonencode({
     Statement = [{
       Action    = "sts:AssumeRole"
